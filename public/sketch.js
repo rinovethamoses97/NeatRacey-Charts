@@ -68,7 +68,8 @@ function drawChart(dataSet,chartDivId){
 		axisY: {
 			title: "Convergence",
 			crosshair: {
-				enabled: true
+				enabled: true,
+				snapToDataPoint: true
 			}
 		},
 		toolTip:{
