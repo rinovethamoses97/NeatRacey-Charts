@@ -43,10 +43,10 @@ function prepareDataSet(levelIndex){
 	dataSet.manhattan=[];
 	for(var i=levelIndex;i<(levelIndex+4);i++){
 		dataSet.euclidean[i-levelIndex]=new Object();
-		dataSet.euclidean[i-levelIndex].x=parseInt(data[i+1][7]);
+		dataSet.euclidean[i-levelIndex].label="Best Size "+parseInt(data[i+1][7]);
 		dataSet.euclidean[i-levelIndex].y=parseInt(data[i+1][0]);
 		dataSet.manhattan[i-levelIndex]=new Object();
-		dataSet.manhattan[i-levelIndex].x=parseInt(data[i+17][7]);
+		dataSet.manhattan[i-levelIndex].label="Best Size "+parseInt(data[i+17][7]);
 		dataSet.manhattan[i-levelIndex].y=parseInt(data[i+17][0]);
 	}
 	return dataSet;
@@ -54,57 +54,44 @@ function prepareDataSet(levelIndex){
 function drawChart(dataSet,chartDivId){
 	var chart = new CanvasJS.Chart(chartDivId, {
 		animationEnabled: true,
-		theme: "light2",
 		title:{
 			text: "Level "+chartDivId[chartDivId.length-1]+" Convergence Chart"
-		},
-		axisX:{
-			title: "Best Size",
-			crosshair: {
-				enabled: true,
-				snapToDataPoint: true
-			}
-		},
+		},	
 		axisY: {
 			title: "Convergence",
-			crosshair: {
-				enabled: true,
-				snapToDataPoint: true
-			}
+			titleFontColor: "#4F81BC",
+			lineColor: "#4F81BC",
+			labelFontColor: "#4F81BC",
+			tickColor: "#4F81BC"
+		},	
+		toolTip: {
+			shared: true
 		},
-		toolTip:{
-			shared:true
-		},  
-		legend:{
+		legend: {
 			cursor:"pointer",
-			verticalAlign: "bottom",
-			horizontalAlign: "left",
-			dockInsidePlotArea: true,
-			itemclick: toogleDataSeries
+			itemclick: toggleDataSeries
 		},
 		data: [{
-			type: "line",
-			showInLegend: true,
+			type: "column",
 			name: "Euclidean",
-			markerType: "square",
-			color: "#F08080",
+			legendText: "Euclidean Distance",
+			showInLegend: true, 
 			dataPoints:dataSet.euclidean
 		},
 		{
-			type: "line",
-			showInLegend: true,
+			type: "column",	
 			name: "Manhattan",
-			markerType: "square",
-			color: "#3bbf4a",
+			legendText: "Manhattan Distance",
+			showInLegend: true,
 			dataPoints:dataSet.manhattan
 		}]
 	});
 	chart.render();
-	
-	function toogleDataSeries(e){
+	function toggleDataSeries(e) {
 		if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
 			e.dataSeries.visible = false;
-		} else{
+		}
+		else {
 			e.dataSeries.visible = true;
 		}
 		chart.render();
