@@ -7,11 +7,31 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.4/addons/p5.dom.js"></script>
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div id="chartContainerLevel1" style="height: 370px; width: 100%;"></div>
-	<div id="chartContainerLevel2" style="height: 370px; width: 100%;"></div>
-	<div id="chartContainerLevel3" style="height: 370px; width: 100%;"></div>
-	<div id="chartContainerLevel4" style="height: 370px; width: 100%;"></div>
+	<div class="container">
+		<div class="dropdown dropright">
+			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+				Dropright button
+			</button>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="#" onclick="setParameter(0)">Convergence</a>
+				<a class="dropdown-item" href="#" onclick="setParameter(1)">First Step</a>
+				<a class="dropdown-item" href="#" onclick="setParameter(2)">Goal Count</a>
+				<a class="dropdown-item" href="#" onclick="setParameter(3)">Final Step</a>
+				<a class="dropdown-item" href="#" onclick="setParameter(4)">Final Goal Count</a>
+				<a class="dropdown-item" href="#" onclick="setParameter(5)">Null Percent</a>
+				<a class="dropdown-item" href="#" onclick="setParameter(6)">Percentage Increase</a>
+			</div>
+		</div>
+		<div id="chartContainerLevel1" style="height: 370px; width: 100%;"></div>
+		<div id="chartContainerLevel2" style="height: 370px; width: 100%;"></div>
+		<div id="chartContainerLevel3" style="height: 370px; width: 100%;"></div>
+		<div id="chartContainerLevel4" style="height: 370px; width: 100%;"></div>
+	</div>
 </body>
 </html>
