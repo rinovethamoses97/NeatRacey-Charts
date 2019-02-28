@@ -52,10 +52,10 @@ function prepareDataSet(levelIndex){
 	for(var i=levelIndex;i<(levelIndex+4);i++){
 		dataSet.euclidean[i-levelIndex]=new Object();
 		dataSet.euclidean[i-levelIndex].label="Best Size "+parseInt(data[i+1][7]);
-		dataSet.euclidean[i-levelIndex].y=parseInt(data[i+1][parameterIndex]);
+		dataSet.euclidean[i-levelIndex].y=parseFloat(data[i+1][parameterIndex]);
 		dataSet.manhattan[i-levelIndex]=new Object();
 		dataSet.manhattan[i-levelIndex].label="Best Size "+parseInt(data[i+17][7]);
-		dataSet.manhattan[i-levelIndex].y=parseInt(data[i+17][parameterIndex]);
+		dataSet.manhattan[i-levelIndex].y=parseFloat(data[i+17][parameterIndex]);
 	}
 	return dataSet;
 }
