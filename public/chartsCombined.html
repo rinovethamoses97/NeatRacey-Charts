@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.6.3/papaparse.js"></script>
+	<script type="text/javascript" src="sketchCombined.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.4/addons/p5.dom.js"></script>
+	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="dropdown dropright">
+			<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+				Level
+			</button>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="#" onclick="setLevel(0)">Level1</a>
+				<a class="dropdown-item" href="#" onclick="setLevel(1)">Level2</a>
+				<a class="dropdown-item" href="#" onclick="setLevel(2)">Level3</a>
+				<a class="dropdown-item" href="#" onclick="setLevel(3)">Level4</a>
+				<a class="dropdown-item" href="#" onclick="setLevel(4)">Level5</a>
+			</div>
+		</div>
+		<div id="chartContainerEuclideanFirst" style="height: 370px; width: 100%;"></div>
+		<div id="chartContainerManhattanFirst" style="height: 370px; width: 100%;"></div>
+		<div id="chartContainerEuclideanFinal" style="height: 370px; width: 100%;"></div>
+		<div id="chartContainerManhattanFinal" style="height: 370px; width: 100%;"></div>
+	</div>
+</body>
+</html>
