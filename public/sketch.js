@@ -83,6 +83,7 @@ function drawChart(dataSet,chartDivId){
 			type: "column",
 			name: "Euclidean",
 			legendText: "Euclidean Distance",
+			indexLabel:"{y}",
 			showInLegend: true, 
 			dataPoints:dataSet.euclidean
 		},
@@ -90,6 +91,7 @@ function drawChart(dataSet,chartDivId){
 			type: "column",	
 			name: "Manhattan",
 			legendText: "Manhattan Distance",
+			indexLabel:"{y}",
 			showInLegend: true,
 			dataPoints:dataSet.manhattan
 		}]
