@@ -1,5 +1,5 @@
 var data;
-var totalLevel=4;
+var totalLevel=5;
 var parameterIndex=0;
 var parameters=["Convergence","First Step","Goal Count","Final Step","Final Goal Count","Null percent","Percent Increase"];
 var config={
@@ -54,8 +54,8 @@ function prepareDataSet(levelIndex){
 		dataSet.euclidean[i-levelIndex].label="Best Size "+parseInt(data[i+1][7]);
 		dataSet.euclidean[i-levelIndex].y=parseFloat(data[i+1][parameterIndex]);
 		dataSet.manhattan[i-levelIndex]=new Object();
-		dataSet.manhattan[i-levelIndex].label="Best Size "+parseInt(data[i+17][7]);
-		dataSet.manhattan[i-levelIndex].y=parseFloat(data[i+17][parameterIndex]);
+		dataSet.manhattan[i-levelIndex].label="Best Size "+parseInt(data[i+21][7]);
+		dataSet.manhattan[i-levelIndex].y=parseFloat(data[i+21][parameterIndex]);
 	}
 	return dataSet;
 }
