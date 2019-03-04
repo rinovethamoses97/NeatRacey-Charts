@@ -6,11 +6,12 @@ app.use(cors());
 app.use(bodyparser.urlencoded({extended:false}));
 app.use(bodyparser.json());
 app.use(express.static(__dirname+"/public"));
+app.set('view engine','ejs');
 app.get('/',function(req,res){
-    res.sendFile(__dirname+"/public/charts.html");
+    res.render('chart');
 });
 app.get('/combined',function(req,res){
-    res.sendFile(__dirname+"/public/chartsCombined.html");
+    res.render('chartCombined');
 });
 
 app.listen(process.env.PORT||3000,function(){
