@@ -8,10 +8,10 @@ app.use(bodyparser.json());
 app.use(express.static(__dirname+"/public"));
 app.set('view engine','ejs');
 app.get('/',function(req,res){
-    res.render('chart');
+    res.render('chart',{title:"NeatRacey Charts"});
 });
 app.get('/combined',function(req,res){
-    res.render('chartCombined');
+    res.render('chartCombined',{title:"NeatRacey Charts Combined"});
 });
 
 app.listen(process.env.PORT||3000,function(){
