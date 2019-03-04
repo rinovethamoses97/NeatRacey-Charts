@@ -141,7 +141,7 @@ function drawChart(dataSetY1,dataSetY2,dataSetY3,chartDivId,level,yLabel,metric)
 			dataPoints:dataSetY1
 		},
 		{
-			type: "area",	
+			type: "line",	
 			name: yLabel[1],
 			legendText: yLabel[1],
 			showInLegend: true,
